@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet"
+        crossorigin="anonymous">   
+    <!-- for style css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Test Front-End Arif Fadilah</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body ">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="name-tab" data-toggle="tab" href="#name" role="tab"
+                                    aria-controls="name" aria-selected="true" tabindex="-1" aria-disabled="true"><i
+                                        class="fas fa-user-alt"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" id="contact-tab" data-toggle="tab" href="#contact"
+                                    role="tab" aria-controls="contact" aria-selected="false" tabindex="-1"
+                                    aria-disabled="true"><i class="fas fa-envelope"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" id="password-tab" data-toggle="tab" href="#password"
+                                    role="tab" aria-controls="password" aria-selected="false"><i
+                                        class="fas fa-unlock-alt"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" id="success-tab" data-toggle="tab" href="#success"
+                                    role="tab" aria-controls="success" aria-selected="false"><i
+                                        class="fas fa-check-circle"></i></a>
+                            </li>
+                        </ul>
+                        <!-- Tab content -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="name" role="tabpanel" aria-labelledby="name-tab">
+                                <h1 class="text-center pt-2 pb-4">Profil</h1>
+                                <div class="form-group">
+                                    <!-- <label for="nama-depan"> Nama Depan:</label> -->
+                                    <input type="text" class="form-control" name="nama-depan" id="nama-depan" required>
+                                    <span class="floating-label">Nama Depan</span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="nama-belakang" id="nama-belakang"
+                                        required>
+                                    <span class="floating-label">Nama Belakang</span>
+                                    <br>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-9">
+                                            <label for="inputEmail4">Jenis Kelamin</label>
+                                            <select class="custom-select">
+                                                <option selected>--Jenis Kelamin--</option>
+                                                <option value="1">Laki-laki</option>
+                                                <option value="2">Perempuan</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-3">
+                                            <label for="umur">Umur</label>
+                                            <input type="number" class="form-control" name="umur" id="umur"
+                                                placeholder="Umur">
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="nexttab btn btn-success btn-block">Next</button>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <h1 class="text-center pt-2">Kontak</h1>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <label for="email"> Email :</label>
+                                        <input type="email" class="form-control " name="email" id="newemail" required
+                                            placeholder="Example@domain.com">
+                                        <br>
+                                        <div id="valid"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="no-telepon"> No. Telepon :</label>
+                                        <input type="number" class="form-control" name="no-telepon" id="no-telepon"
+                                            required placeholder="+628XXXXXXXXX">
+                                    </div>
+                                </form>
+                                <button class="nexttab btn btn-success btn-block">Next</button>
+                            </div>
+                            <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                                <h1 class="text-center pt-2 pb-4">Password</h1>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control " name="password" id="newpassword"
+                                            required>
+                                        <span class="floating-label">Masukan Password</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" name="ulangi-password"
+                                            id="ulangi-password" required onChange="checkPasswordMatch();">
+                                        <span class="floating-label">Ulangi Password</span>
+                                    </div>
+                                    <div class="registrationFormAlert pb-2" id="divCheckPasswordMatch"></div>
+                                </form>
+                                <button class="nexttab btn btn-success btn-block pt-2">Next</button>
+                            </div>
+                            <div class="tab-pane fade" id="success" role="tabpanel" aria-labelledby="success">
+                                <div class="text-center">
+                                    <div class="font-50"> <i class="fas fa-check-circle"></i></div>
+                                    <h1 class="pt-3 pb-2">Selamat!</h1>
+                                    <p>Anda Berhasil Terdaftar di TK Bermain Terus!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script src="tes.js"></script>
+</body>
+
+</html>

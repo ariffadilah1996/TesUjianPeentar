@@ -1,0 +1,83 @@
+body {
+    background-color: #7dc4e0;
+}
+
+h1,
+label {
+    text-shadow: 2px 2px 2px lightgray;
+}
+
+.btn {
+    box-shadow: 4px 4px 5px lightgray;
+
+}
+
+.active#name-tab,
+.active#contact-tab,
+.active#password-tab {
+    color: blue;
+    font-size: 40px;
+}
+
+
+#name-tab,
+#contact-tab,
+#password-tab,
+#success-tab {
+
+    font-size: 40px;
+    padding-right: 42px;
+    padding-left: 42px;
+}
+
+.active#success-tab {
+    color: green;
+}
+
+
+.font-50 {
+    font-size: 100px;
+    color: green;
+    padding: 20px;
+}
+
+/* input:focus~.floating-label,
+input:not(:focus):valid~.floating-label {
+    top: 160px;
+    bottom: 10px;
+    left: 20px;
+    font-size: 15px;
+    opacity: 1;
+    color: black;
+}
+
+
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 30px;
+    top: 190px;
+    transition: 0.2s ease all;
+    color: grey;
+} */
+
+input:focus~.floating-label,
+input:not(:focus):valid~.floating-label {
+    bottom: 65px;
+    left: 0px;
+    font-size: 15px;
+    opacity: 1;
+    color: black;
+}
+
+
+
+.floating-label {
+    position: relative;
+    pointer-events: none;
+    left: 10px;
+    bottom: 32px;
+    transition: 0.3s ease all;
+    color: grey;
+}
